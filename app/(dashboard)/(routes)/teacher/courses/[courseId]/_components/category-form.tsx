@@ -19,7 +19,6 @@ import { Pencil } from "lucide-react";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { cn } from "@/lib/utils";
-import { Textarea } from "@/components/ui/textarea";
 import { Course } from "@prisma/client";
 import { Combobox } from "@/components/ui/combobox";
 
@@ -36,7 +35,7 @@ const formSchema = z.object({
 export const CategoryForm = ({
     initialData,
     courseId,
-    options
+    options,
 }: CategoryFormProps) => {
     const [isEditing, setIsEditing] = useState(false);
 
@@ -102,7 +101,7 @@ export const CategoryForm = ({
                                 <FormItem>
                                     <FormControl>
                                         <Combobox 
-                                            options={...options}
+                                            options={options}
                                             {...field}
                                         />
                                     </FormControl>
